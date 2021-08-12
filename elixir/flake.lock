@@ -1,0 +1,60 @@
+{
+  "nodes": {
+    "nix-elixir": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1618817164,
+        "narHash": "sha256-dDAFMWC7j+8xa9GCsBZ9YBYlRUPNrEn8cIVlFULmnvc=",
+        "owner": "hauleth",
+        "repo": "nix-elixir",
+        "rev": "2686deb2b20d20367c2e98b007d1579ef83929f6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hauleth",
+        "repo": "nix-elixir",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1628696776,
+        "narHash": "sha256-K8+/IQNZDZltIu/KSf+Tz01OwNzTGgTch0ktMOWcxLg=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "927ce1afc1db40869a463a37ea2738c27d425f80",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-21.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nix-elixir": "nix-elixir",
+        "nixpkgs": "nixpkgs",
+        "utils": "utils"
+      }
+    },
+    "utils": {
+      "locked": {
+        "lastModified": 1623875721,
+        "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "f7e004a55b120c02ecb6219596820fcd32ca8772",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
