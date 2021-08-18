@@ -1,9 +1,5 @@
 final: prev: {
-  my-mix-project = nixpkgs.beam.packages.erlang.buildMix' { 
-      pname = "my-mix-project";
-      version = "0.1";
-      src = ./.;
-  };
+  my-mix-project = with prev; prev.callPackage ./mix-project.nix { };
 
   devShell = final.my-mix-project;
 }

@@ -1,21 +1,5 @@
 {
   "nodes": {
-    "nix-elixir": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1618817164,
-        "narHash": "sha256-dDAFMWC7j+8xa9GCsBZ9YBYlRUPNrEn8cIVlFULmnvc=",
-        "owner": "hauleth",
-        "repo": "nix-elixir",
-        "rev": "2686deb2b20d20367c2e98b007d1579ef83929f6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hauleth",
-        "repo": "nix-elixir",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1628696776,
@@ -34,24 +18,20 @@
     },
     "root": {
       "inputs": {
-        "nix-elixir": "nix-elixir",
         "nixpkgs": "nixpkgs",
-        "utils": "utils"
+        "src": "src"
       }
     },
-    "utils": {
+    "src": {
+      "flake": false,
       "locked": {
-        "lastModified": 1623875721,
-        "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "f7e004a55b120c02ecb6219596820fcd32ca8772",
-        "type": "github"
+        "narHash": "sha256-BZ+kzJEzHC2n7vjcz4y4LcT3doHhoHHE3BEsnAq0W2k=",
+        "path": "/home/apok/code/summer-of-nix/flakes-templates/elixir/flaketest",
+        "type": "path"
       },
       "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
+        "path": "/home/apok/code/summer-of-nix/flakes-templates/elixir/flaketest",
+        "type": "path"
       }
     }
   },
