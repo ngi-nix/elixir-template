@@ -19,19 +19,22 @@
     "root": {
       "inputs": {
         "nixpkgs": "nixpkgs",
-        "src": "src"
+        "utils": "utils"
       }
     },
-    "src": {
-      "flake": false,
+    "utils": {
       "locked": {
-        "narHash": "sha256-BZ+kzJEzHC2n7vjcz4y4LcT3doHhoHHE3BEsnAq0W2k=",
-        "path": "/home/apok/code/summer-of-nix/flakes-templates/elixir/flaketest",
-        "type": "path"
+        "lastModified": 1629481132,
+        "narHash": "sha256-JHgasjPR0/J1J3DRm4KxM4zTyAj4IOJY8vIl75v/kPI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "997f7efcb746a9c140ce1f13c72263189225f482",
+        "type": "github"
       },
       "original": {
-        "path": "/home/apok/code/summer-of-nix/flakes-templates/elixir/flaketest",
-        "type": "path"
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
       }
     }
   },
