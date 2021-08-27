@@ -10,20 +10,15 @@
     # specify the system since Nix doesn't have access to the currentSystem value.
     with import nixpkgs { system = "x86_64-linux";};
     let
-      deps = import ./deps.nix { inherit beamPackages lib ;};
-
-      pkgsForSystem = system: rec { 
-        inherit system beamPackages; 
+      pkgsForSystem = system: rec {
+        inherit system beamPackages;
+        deps = with pkgs; import ./deps.nix { inherit beamPackages lib ;};
         pkgs = beam.packagesWith beam.interpreters.erlang;
-        my-mix-project = pkgs.buildMix rec {
-          name = "my-mix-project";
+        my-mix-project = pkgs.mixRelease rec {
+          pname = "my-mix-project";
           src = ./.;
           version = "0.0.0";
-          beamDeps = [
-            # update the names here with your deps from mix.exs
-            deps.my-first-dep
-            deps.my-second-dep 
-          ];
+          mixNixDeps = deps;
         };
       };
     in utils.lib.eachSystem [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" ] (system: rec {
@@ -32,6 +27,7 @@
         inherit (legacyPackages) my-mix-project;
       };
       defaultPackage = packages.my-mix-project;
+      devShell = pkgs.mkShell { buildInputs = [ packages.my-mix-project ] ;};
       apps.my-mix-project = utils.lib.mkApp { drv = packages.my-mix-project; };
       hydraJobs = { inherit (legacyPackages) my-mix-project; };
       checks = { inherit (legacyPackages) my-mix-project; };
