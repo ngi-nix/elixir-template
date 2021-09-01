@@ -25,7 +25,6 @@
           src = ./.;
           version = "0.0.0";
          };
-      devShell = final.my-mix-project;
     };
     in utils.lib.eachDefaultSystem (system: rec {
       legacyPackages = pkgsForSystem system;
@@ -36,5 +35,19 @@
       apps.my-mix-project = utils.lib.mkApp { drv = packages.my-mix-project; };
       hydraJobs = { inherit (legacyPackages) my-mix-project; };
       checks = { inherit (legacyPackages) my-mix-project; };
+      devShell = legacyPackages.mkShell {
+        buildInputs = [ legacyPackages.mix2nix legacyPackages.git legacyPackages.beam.packages.erlangR24.elixir_1_11];
+        shellHook = ''
+          # this allows mix to work on the local directory 
+          mkdir -p $PWD/.nix-mix
+          mkdir -p $PWD/.nix-hex
+          export MIX_HOME=$PWD/.nix-mix
+          export HEX_HOME=$PWD/.nix-mix
+          export PATH=$MIX_HOME/bin:$PATH
+          export PATH=$HEX_HOME/bin:$PATH
+          mix local.hex --if-missing
+          export ERL_AFLAGS="-kernel shell_history enabled" 
+        '';
+      };
     });
 }
