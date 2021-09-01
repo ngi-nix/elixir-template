@@ -2,7 +2,7 @@
   description = "A flake template for Elixir projects built with Mix";
 
   inputs = {
-    nixpkgs.url = github:NixOS/nixpkgs/nixos-21.05;
+    nixpkgs.url = github:NixOS/nixpkgs?ref=master;
     utils.url = "github:numtide/flake-utils";
   };
 
@@ -16,10 +16,11 @@
     overlay = final: prev: rec {
 
       my-mix-project = with final;
-        let 
+        let
           beamPackages = beam.packagesWith beam.interpreters.erlangR24; 
           mixNixDeps = import ./deps.nix { inherit lib beamPackages; }; 
         in beamPackages.mixRelease {
+          inherit mixNixDeps;
           pname = "my-mix-project";
           src = ./.;
           version = "0.0.0";
