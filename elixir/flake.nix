@@ -29,7 +29,7 @@
     in utils.lib.eachDefaultSystem (system: rec {
       legacyPackages = pkgsForSystem system;
       packages = utils.lib.flattenTree {
-        inherit (legacyPackages) devShell my-mix-project;
+        inherit (legacyPackages) my-mix-project;
       };
       defaultPackage = packages.my-mix-project;
       devShell = self.devShells.${system}.dev;
