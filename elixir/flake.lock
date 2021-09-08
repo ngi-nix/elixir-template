@@ -1,51 +1,34 @@
 {
   "nodes": {
-    "nix-elixir": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1618817164,
-        "narHash": "sha256-dDAFMWC7j+8xa9GCsBZ9YBYlRUPNrEn8cIVlFULmnvc=",
-        "owner": "hauleth",
-        "repo": "nix-elixir",
-        "rev": "2686deb2b20d20367c2e98b007d1579ef83929f6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hauleth",
-        "repo": "nix-elixir",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1628696776,
-        "narHash": "sha256-K8+/IQNZDZltIu/KSf+Tz01OwNzTGgTch0ktMOWcxLg=",
+        "lastModified": 1630520102,
+        "narHash": "sha256-/nSnzuvcvErz+xgIv2G/0K3NHdTr0kYGjnOCPKNfBro=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "927ce1afc1db40869a463a37ea2738c27d425f80",
+        "rev": "03f44bd2251a6c7d28aa7d376a3df1ff127b0139",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-21.05",
+        "ref": "master",
         "repo": "nixpkgs",
         "type": "github"
       }
     },
     "root": {
       "inputs": {
-        "nix-elixir": "nix-elixir",
         "nixpkgs": "nixpkgs",
         "utils": "utils"
       }
     },
     "utils": {
       "locked": {
-        "lastModified": 1623875721,
-        "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",
+        "lastModified": 1629481132,
+        "narHash": "sha256-JHgasjPR0/J1J3DRm4KxM4zTyAj4IOJY8vIl75v/kPI=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "f7e004a55b120c02ecb6219596820fcd32ca8772",
+        "rev": "997f7efcb746a9c140ce1f13c72263189225f482",
         "type": "github"
       },
       "original": {
